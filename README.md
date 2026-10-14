@@ -1,3 +1,8 @@
+> **New visual demo: [Green tests. Stranded robot.](rescue/)**
+> A planner passes static tests, then sends a robot into a closed bridge.
+> One real Codex repair improves recorded world checks from 2/5 to 5/5.
+> [Watch the 25-second replay](rescue/sample/showcase.mp4) · [See the visual](rescue/sample/showcase.png)
+
 # AgentEnv × Harbor: one task, different environments
 
 **Latest verified run:** real Codex with ChatGPT login repaired the task in all

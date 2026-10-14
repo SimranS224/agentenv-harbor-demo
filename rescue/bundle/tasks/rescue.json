@@ -1,0 +1,5 @@
+[
+ {"id":"repair","type":"rescue_repair"},
+ {"id":"simulate","type":"rescue_simulate","depends_on":["repair"]},
+ {"id":"replay","type":"rescue_replay","depends_on":["simulate"]}
+]

@@ -1,0 +1,5 @@
+artifacts/
+.trial-state/
+__pycache__/
+.venv/
+.env*
