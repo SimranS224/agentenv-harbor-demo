@@ -1,0 +1,4 @@
+[envs]
+impls = ["lander_demo.environment:PhysicsWorld"]
+[task_steps]
+impls = ["lander_demo.steps:Fly", "lander_demo.steps:Grade", "lander_demo.steps:Collect"]

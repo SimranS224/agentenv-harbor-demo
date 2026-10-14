@@ -1,0 +1,136 @@
+{
+  "batch": "4a0c2010-audit",
+  "task_id": "worldswap-land-probe",
+  "task_version": 4,
+  "task_sha256": "c4ae62a088419cea32ba280f0a4c88501d8317494866e102122f316cc26ee954",
+  "task_definition": {
+    "id": "worldswap-land-probe",
+    "type": "task",
+    "version": 4,
+    "steps": [
+      {
+        "id": "world",
+        "type": "deploy_env",
+        "version": null,
+        "fail_task_on_error": true,
+        "env_id": "<world_id>",
+        "env_version": null,
+        "artifact_id": null,
+        "artifact_version": null,
+        "ttl_seconds": 300,
+        "disk_size_gb": 10,
+        "gateway_mode": "performance",
+        "cpu": null,
+        "memory_mb": null,
+        "sandbox_type": null,
+        "env_state_type": null,
+        "env_state_instance_id": null,
+        "metadata": {}
+      },
+      {
+        "id": "fly",
+        "type": "fly_controller",
+        "version": null,
+        "fail_task_on_error": true,
+        "depends_on": [
+          {
+            "task_step_id": "world"
+          }
+        ],
+        "controller_id": "worldswap-controller",
+        "controller_version": 4
+      },
+      {
+        "id": "grade",
+        "type": "grade_landing",
+        "version": null,
+        "fail_task_on_error": true,
+        "depends_on": [
+          {
+            "task_step_id": "fly"
+          }
+        ]
+      },
+      {
+        "id": "collect",
+        "type": "collect_landing",
+        "version": null,
+        "fail_task_on_error": true,
+        "depends_on": [
+          {
+            "task_step_id": "grade"
+          }
+        ]
+      }
+    ]
+  },
+  "controller_id": "worldswap-controller",
+  "controller_version": 4,
+  "controller_sha256": "a7b54dc1f4708ebb4985d656ca04cddec5665835fbd90ee239a2094d81c60680",
+  "verifier_sha256": "20b68f90cea8375072c4ebbb7a252b095ac2491da23a50bbba261a974f53ba5b",
+  "environments": [
+    {
+      "id": "worldswap-earth",
+      "version": 2,
+      "world": {
+        "name": "Earth",
+        "slug": "earth",
+        "gravity": 80,
+        "wind": 0,
+        "start": [
+          110,
+          285
+        ],
+        "pad_x": 490,
+        "pad_y": 16,
+        "max_thrust": 180,
+        "max_lateral": 65,
+        "theme": "earth",
+        "description": "Strong gravity \u00b7 calm air"
+      },
+      "definition_sha256": "6d49786f26b7d99acc4f5ce4feedf85fee01c47bd8a3c21d4c6d7665c10f106d"
+    },
+    {
+      "id": "worldswap-mars",
+      "version": 2,
+      "world": {
+        "name": "Mars",
+        "slug": "mars",
+        "gravity": 30,
+        "wind": 18,
+        "start": [
+          110,
+          285
+        ],
+        "pad_x": 490,
+        "pad_y": 16,
+        "max_thrust": 180,
+        "max_lateral": 65,
+        "theme": "mars",
+        "description": "Lower gravity \u00b7 persistent crosswind"
+      },
+      "definition_sha256": "24e1f912d0eb78ff1a643cdd81eaa547d39694738ced7e785bb059ae18277aaf"
+    },
+    {
+      "id": "worldswap-moon",
+      "version": 2,
+      "world": {
+        "name": "Moon",
+        "slug": "moon",
+        "gravity": 13,
+        "wind": 0,
+        "start": [
+          110,
+          285
+        ],
+        "pad_x": 490,
+        "pad_y": 16,
+        "max_thrust": 180,
+        "max_lateral": 65,
+        "theme": "moon",
+        "description": "Low gravity \u00b7 no atmosphere"
+      },
+      "definition_sha256": "8f2fe00812f56133759fb12356c4c9fc4c404ac1c24f9a5f7cdda57ea91377f5"
+    }
+  ]
+}

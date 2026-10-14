@@ -1,7 +1,9 @@
-> **New visual demo: [Green tests. Stranded robot.](rescue/)**
-> A planner passes static tests, then sends a robot into a closed bridge.
-> One real Codex repair improves recorded world checks from 2/5 to 5/5.
-> [Watch the 25-second replay](rescue/sample/showcase.mp4) · [See the visual](rescue/sample/showcase.png)
+> **Latest visual demo: [One task. Three worlds.](worldswap/)**
+> One real coding-agent repair. Three independently registered physics environments.
+> Same stored task version, controller artifact, and verifier. Successful landings: **1/3 → 3/3**.
+> [Watch the 24-second replay](worldswap/sample/showcase.mp4) · [See the visual](worldswap/sample/showcase.png) · [Inspect the evidence](worldswap/sample/comparison.json)
+>
+> Earlier visual experiment: [Green tests. Stranded robot.](rescue/)
 
 # AgentEnv × Harbor: one task, different environments
 

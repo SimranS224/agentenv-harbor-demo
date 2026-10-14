@@ -1,0 +1,1 @@
+{"name":"Mars","slug":"mars","gravity":30,"wind":18,"start":[110,285],"pad_x":490,"pad_y":16,"max_thrust":180,"max_lateral":65,"theme":"mars","description":"Lower gravity · persistent crosswind"}
