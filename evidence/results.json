@@ -1,0 +1,131 @@
+{
+  "run_id": "20261014T051227Z-fc3028d0",
+  "mode": "codex",
+  "source": {
+    "name": "requests-header-regression-demo",
+    "repository_url": "https://github.com/psf/requests",
+    "base_commit_hash": "0e322af87745eff34caffe4df68456ebc20d9068",
+    "synthetic_regression": true
+  },
+  "task_sha256": "59de22027b9f25de2ecc46e7211ce022bb5b82c8d8309758ac6654be5340f027",
+  "files": {
+    "environment/Dockerfile": "bbafa61c9475fbc5b8c70bb96ceb088ff5471a61530ea4ec7d8bd0cbaf2953d4",
+    "environment/seed.py": "303d388d2c5f2fba674f7f4cf8b4c6fd56df18d4964e904b67ce491ac57a6a8b",
+    "instruction.md": "9745e740d1c20d0dd323c81fe9a8d4020cf8845245a668a6cbee4ea0d334b9e6",
+    "solution/solve.sh": "dc95e31fd58a49d66085a00aade09e0b32eb1b0639c5e5c56ea2c78db0219307",
+    "task.toml": "5a3a5fb54841e1f880a30cab6780bd1df43527b9832126f89b5652a4a7435b34",
+    "tests/test.sh": "29f197ee6e52e3710e2d73f1d9ade22d9085c95bf780db23f7a88d9c7a55ccad",
+    "tests/test_headers.py": "d187c92151fadd060d8d7c8d8dea5ed0adc2feb8a587bfd0b90be7c361f35096"
+  },
+  "task_unchanged": true,
+  "image_id": "sha256:50bf75c43dc1e2a461ca20c464540379564a113ede94299c436a74042f5865c4",
+  "results": [
+    {
+      "profile": "standard",
+      "mode": "codex",
+      "settings": {
+        "network": "bridge",
+        "memory_mb": 256,
+        "cpus": 1.0
+      },
+      "task_sha256": "59de22027b9f25de2ecc46e7211ce022bb5b82c8d8309758ac6654be5340f027",
+      "image_id": "sha256:50bf75c43dc1e2a461ca20c464540379564a113ede94299c436a74042f5865c4",
+      "observed": {
+        "NetworkMode": "bridge",
+        "Memory": 268435456,
+        "NanoCpus": 1000000000
+      },
+      "agent": {
+        "model": "gpt-5.6-luna",
+        "auth": "chatgpt",
+        "tool_calls": 7,
+        "status": "token_stop",
+        "cost_usd": null,
+        "billing": "ChatGPT plan usage; dollar cost unavailable",
+        "input_tokens": 35817,
+        "output_tokens": 1025,
+        "cached_input_tokens": 20992,
+        "api_key_fallback": false,
+        "host_environment_access": false
+      },
+      "patch": "--- before/requests/structures.py\n+++ after/requests/structures.py\n@@ -49,7 +49,7 @@\n         self._store[key.lower()] = (key, value)\n \n     def __getitem__(self, key):\n-        return self._store[key][1]\n+        return self._store[key.lower()][1]\n \n     def __delitem__(self, key):\n         del self._store[key.lower()]\n",
+      "reward": 1,
+      "control_ok": true,
+      "cleanup_ok": true,
+      "seconds": 17.821
+    },
+    {
+      "profile": "offline",
+      "mode": "codex",
+      "settings": {
+        "network": "none",
+        "memory_mb": 256,
+        "cpus": 1.0
+      },
+      "task_sha256": "59de22027b9f25de2ecc46e7211ce022bb5b82c8d8309758ac6654be5340f027",
+      "image_id": "sha256:50bf75c43dc1e2a461ca20c464540379564a113ede94299c436a74042f5865c4",
+      "observed": {
+        "NetworkMode": "none",
+        "Memory": 268435456,
+        "NanoCpus": 1000000000
+      },
+      "agent": {
+        "model": "gpt-5.6-luna",
+        "auth": "chatgpt",
+        "tool_calls": 6,
+        "status": "token_stop",
+        "cost_usd": null,
+        "billing": "ChatGPT plan usage; dollar cost unavailable",
+        "input_tokens": 34180,
+        "output_tokens": 888,
+        "cached_input_tokens": 16384,
+        "api_key_fallback": false,
+        "host_environment_access": false,
+        "final_message": "Repaired `CaseInsensitiveDict.__getitem__` to normalize keys with `.lower()` during lookup.\n\nChecks:\n- Verified case-insensitive lookup, updates, deletion, copying, original casing, and equality.\n- Python compilation passed.\n- `pytest` unavailable in the environment."
+      },
+      "patch": "--- before/requests/structures.py\n+++ after/requests/structures.py\n@@ -49,7 +49,7 @@\n         self._store[key.lower()] = (key, value)\n \n     def __getitem__(self, key):\n-        return self._store[key][1]\n+        return self._store[key.lower()][1]\n \n     def __delitem__(self, key):\n         del self._store[key.lower()]\n",
+      "reward": 1,
+      "control_ok": true,
+      "cleanup_ok": true,
+      "seconds": 15.114
+    },
+    {
+      "profile": "constrained",
+      "mode": "codex",
+      "settings": {
+        "network": "none",
+        "memory_mb": 128,
+        "cpus": 0.25
+      },
+      "task_sha256": "59de22027b9f25de2ecc46e7211ce022bb5b82c8d8309758ac6654be5340f027",
+      "image_id": "sha256:50bf75c43dc1e2a461ca20c464540379564a113ede94299c436a74042f5865c4",
+      "observed": {
+        "NetworkMode": "none",
+        "Memory": 134217728,
+        "NanoCpus": 250000000
+      },
+      "agent": {
+        "model": "gpt-5.6-luna",
+        "auth": "chatgpt",
+        "tool_calls": 5,
+        "status": "token_stop",
+        "cost_usd": null,
+        "billing": "ChatGPT plan usage; dollar cost unavailable",
+        "input_tokens": 31807,
+        "output_tokens": 657,
+        "cached_input_tokens": 14592,
+        "api_key_fallback": false,
+        "host_environment_access": false,
+        "final_message": "Fixed `CaseInsensitiveDict.__getitem__` to normalize lookup keys with `.lower()`, preserving case-insensitive access while retaining update, deletion, original-key casing, copying, and equality behavior.\n\nFocused checks passed. pytest was unavailable in the container."
+      },
+      "patch": "--- before/requests/structures.py\n+++ after/requests/structures.py\n@@ -49,7 +49,7 @@\n         self._store[key.lower()] = (key, value)\n \n     def __getitem__(self, key):\n-        return self._store[key][1]\n+        return self._store[key.lower()][1]\n \n     def __delitem__(self, key):\n         del self._store[key.lower()]\n",
+      "reward": 1,
+      "control_ok": true,
+      "cleanup_ok": true,
+      "seconds": 15.747
+    }
+  ],
+  "scope": "Synthetic regression. One model attempt per environment; exploratory demo, not a benchmark.",
+  "billing": "ChatGPT plan usage. No API-key calls or API fallback. Dollar cost unavailable; VM charges excluded.",
+  "publication_note": "Export of the verified run; local instance, container and controller identifiers omitted."
+}

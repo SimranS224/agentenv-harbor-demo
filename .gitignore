@@ -1,0 +1,9 @@
+artifacts/
+.trial-state/
+__pycache__/
+*.egg-info/
+.env
+.env.*
+.spend-ledger.*
+.venv/
+.DS_Store

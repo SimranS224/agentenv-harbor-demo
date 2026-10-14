@@ -1,0 +1,5 @@
+{
+  "standard": {"network":"bridge", "memory_mb":256, "cpus":1.0},
+  "offline": {"network":"none", "memory_mb":256, "cpus":1.0},
+  "constrained": {"network":"none", "memory_mb":128, "cpus":0.25}
+}

@@ -1,0 +1,11 @@
+test_case_insensitive_lookup (__main__.Headers.test_case_insensitive_lookup) ... ok
+test_copy_equality_and_missing (__main__.Headers.test_copy_equality_and_missing) ... ok
+test_delete (__main__.Headers.test_delete) ... ok
+test_real_prepared_request (__main__.Headers.test_real_prepared_request) ... ok
+test_update_and_casing (__main__.Headers.test_update_and_casing) ... ok
+test_uses_checkout (__main__.Headers.test_uses_checkout) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK

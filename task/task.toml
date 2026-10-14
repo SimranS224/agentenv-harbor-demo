@@ -1,0 +1,15 @@
+schema_version = "1.1"
+[metadata]
+name = "requests-header-regression-demo"
+repository_url = "https://github.com/psf/requests"
+base_commit_hash = "0e322af87745eff34caffe4df68456ebc20d9068"
+synthetic_regression = true
+[agent]
+timeout_sec = 60.0
+[verifier]
+timeout_sec = 60.0
+[environment]
+build_timeout_sec = 600.0
+cpus = 1
+memory_mb = 256
+storage_mb = 1024
